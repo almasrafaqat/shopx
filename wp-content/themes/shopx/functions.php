@@ -49,7 +49,13 @@ function shopx_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'shopx' ),
+			'small-header-nav' => esc_html__( 'Small Header Nav', 'shopx' ),
+			'mega-menu-1' => esc_html__( 'mega-menu-1', 'shopx' ),
+			'mega-menu-2' => esc_html__( 'mega-menu-2', 'shopx' ),
+			'mega-menu-3' => esc_html__( 'mega-menu-3', 'shopx' ),
+			'mega-menu-4' => esc_html__( 'mega-menu-4', 'shopx' ),
+			
+			
 		)
 	);
 

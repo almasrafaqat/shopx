@@ -62,6 +62,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Document
 	 ========================================================================== */
 
+:root{
+--primary: #1f2642;
+--accent: #fe6e0e;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -533,17 +538,18 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: var(--primary);
+	text-decoration: none;
 }
 
 a:visited {
-	color: #800080;
+	color: var(--accent);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: var(--accent);
 }
 
 a:focus {
@@ -645,6 +651,37 @@ textarea {
 # Components
 --------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.small-header.container {
+	background-color: var(--accent);
+	padding: 10px 20px;
+	border-radius: 5px 5px 0 0;
+}
+
+.small-nav{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	line-height: 1;
+}
+
+.small-nav li {
+	display: inline-block;
+	margin-right: 10px;
+}
+.small-nav li:last-child{
+	margin-right: 0;
+}
+.small-nav li a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+}
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
