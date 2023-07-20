@@ -24,7 +24,7 @@
 
 <div class="main-header container">
     <div class="row align-items-center">
-        <div class="site-branding col-md-4">
+        <div class="site-branding col-md-3">
             <span href="javascript:" id="desktop-mega-toggle" class="mega-menu-toggle"><i class="fas fa-bars"></i></span>
             <?php
                 if(has_custom_logo()){
@@ -34,8 +34,25 @@
                 }
             ?>
         </div>
-        <div class="col-md-5">
-            Search input Dropdown
+        <div class="search-col col-md-6">
+            <div class="wrapper d-flex">
+                <div class="search-container">
+                    <input type="text" id="keyword" name="keyword" placeholder="Search..." />
+                </div>
+                <div class="category-container">
+                <select id="category" name="category">
+                <option value="1">All Categories</option>
+                    <option value="1">Clothes</option>
+                    <option value="2">Women Dress</option>
+                    <option value="3">Men Dress</option>
+                    <option value="4">Kids Fashion</option>
+                </select>
+                </div>
+               <div class="button-container">
+                <button id="submit" name="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+               </div>
+
+            </div>
         </div>
         <div class="buttons-col col-md-3">
             <ul class="action-buttons">
