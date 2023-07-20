@@ -669,19 +669,24 @@ textarea {
 	border-radius: 5px 5px 0 0;
 }
 
+.main-header.container {
+	background-color: var(--primary);
+	padding: 10px 20px;
+}
+
 
 /* Navigation
 --------------------------------------------- */
 
-.small-nav{
+.small-nav, .social-icons, .action-buttons {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	text-align: left;
-	line-height: 1;
+	
 }
 
-.small-nav li {
+.small-nav li , .social-icons li{
 	display: inline-block;
 	margin-right: 10px;
 }
@@ -692,7 +697,32 @@ textarea {
 	color: #fff;
 	font-size: 14px;
 	font-weight: 500;
+	line-height: 1.3;
 
+}
+
+
+/* socaial Icons */
+
+.social-icons, .action-buttons {
+
+	text-align: right;
+}
+.action-buttons li {
+	display: inline-block;
+}
+.social-icons li {
+	margin-left: 10px;
+}
+.action-buttons li {
+	margin-left: 20px;
+}
+.social-icons li a, .action-buttons li a {
+	color: #fff;
+	
+}
+.action-buttons li a {
+	font-size: 34px;
 }
 
 /* Posts and pages

@@ -5,10 +5,12 @@ function shopx_scripts() {
   wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), "5.3.0");
 
   /**Font-awesome css all */
-  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/all.min.css', array(), "6.4.0");
+  wp_enqueue_style('font-awesome', get_template_directory_uri() .'/assets/font-awesome/css/all.min.css', array(), '6.4.0');
 
   /**Font-awesome css min */
-  wp_enqueue_style('font-awesome-v4', get_template_directory_uri() . '/assets/font-awesome/v4-shims.min.css', array(), "6.4.0");
+  wp_enqueue_style('font-awesome-v4', get_template_directory_uri() .'/assets/font-awesome/css/v4-shims.min.css', array(), '6.4.0');
+
+
 
 /**Default */
 	wp_enqueue_style( 'shopx-style', get_stylesheet_uri(), array(), _S_VERSION );
