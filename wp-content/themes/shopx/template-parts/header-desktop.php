@@ -25,7 +25,7 @@
 <div class="main-header container">
     <div class="row align-items-center">
         <div class="site-branding col-md-3">
-            <span href="javascript:" id="desktop-mega-toggle" class="mega-menu-toggle"><i class="fas fa-bars"></i></span>
+            <a href="javascript:" id="desktop-mega-toggle" class="mega-menu-toggle"><i class="fas fa-bars"></i></a>
             <?php
                 if(has_custom_logo()){
                     the_custom_logo();

@@ -135,7 +135,57 @@ function shopx_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
+		),
+		
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 1', 'shopx' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'shopx' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s shopx-widget subscriber-section">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+		
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 2', 'shopx' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'shopx' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s shopx-widget">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+		
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 3', 'shopx' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add widgets here.', 'shopx' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s shopx-widget">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+		
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 4', 'shopx' ),
+			'id'            => 'footer-4',
+			'description'   => esc_html__( 'Add widgets here.', 'shopx' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s shopx-widget">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		),
+		
 	);
 }
 add_action( 'widgets_init', 'shopx_widgets_init' );

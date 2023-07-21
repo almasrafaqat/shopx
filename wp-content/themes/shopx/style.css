@@ -674,6 +674,11 @@ textarea {
 	padding: 10px 20px;
 }
 
+.mega-menu-toggle .fa-bars {
+	font-size: 28px;
+	color: #fff;
+}
+
 .search-col .wrapper {
 	height: 45px;	
 }
@@ -1005,3 +1010,93 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/*------------------------------
+Footer
+*/
+
+/**Widget Global Style***/
+
+.shopx-widget h1, .shopx-widget h2, .shopx-widget h3, .shopx-widget h4, .shopx-widget h5, .shopx-widget h6 {
+	text-align: center;
+}
+
+.shopx-widget ul {
+	list-style: none;
+}
+.shopx-widget ul li {
+	margin-top: 5px;
+}
+
+.shopx-widget-container {
+	background-color: #f5f5f5;
+	padding: 15px;
+	border-radius: 10px;
+}
+.shopx-widget-container .subsriber-container {
+	margin-top: -30px;
+}
+
+.subsriber-container div form {
+	display: flex;
+}
+.subsriber-container div form p  {
+	
+	padding: 5px;
+	
+}
+
+.subsriber-container div form p input[type="email"] {
+	
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	
+}
+.subsriber-container div form p input[type="submit"] {
+	
+	background-color: #21759b;
+	padding: 10px;
+	
+}
+.shopx-widget-container .site-links {
+	margin-top: 50px;
+}
+
+.subsriber-container {
+	background-color: #1f2642;
+	padding: 15px;
+	border-radius: 8px;
+}
+.subsriber-container .shopx-widget{
+	margin-bottom: 0;
+}
+
+.shopx-widget p, .subsriber-container h2 {
+	color: #fff;
+	font-family: var(--font-family-style);
+	text-align: left;
+}
+.subsriber-container h2 {
+	font-weight: 500;
+}
+
+
+ .footer-social-icons ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+}
+.footer-social-icons li {
+	display: inline-block;
+	margin-left: 10px;
+}
+.footer-social-icons li a {
+	color: #fff;
+	
+}
+.footer-social-icons i {
+	font-size: 24px;
+}
+
