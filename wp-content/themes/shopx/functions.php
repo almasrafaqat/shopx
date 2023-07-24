@@ -195,6 +195,34 @@ add_action( 'widgets_init', 'shopx_widgets_init' );
  */
 require get_template_directory() . '/inc/scripts.php';
 
+
+/**
+ * Custom Posts.
+ */
+require get_template_directory() . '/inc/custom-posts/slider_category.php';
+
+/**
+ * Add ACF
+ */
+
+// Define path and URL to the ACF plugin.
+define( 'SHOPX_ACF_PATH', get_stylesheet_directory() . '/inc/plugins/acf/' );
+define( 'SHOPX_ACF_URL', get_stylesheet_directory_uri() . '/inc/plugins/acf/' );
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url( $url ) {
+    return SHOPX_ACF_URL;
+}
+
+// include_once get_template_directory_uri() . '/inc/meta/meta.php';
+require_once dirname(__FILE__).'/inc/meta/meta.php';
+
+// Include the ACF plugin.
+include_once( SHOPX_ACF_PATH . 'acf.php' );
+
+
+
 /**
  * Implement the Custom Header feature.
  */
