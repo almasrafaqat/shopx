@@ -37,7 +37,7 @@ function create_categoryslider_cpt() {
 		'description' => __( '', 'shopx' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-format-gallery',
-		'supports' => array('title', 'thumbnail', 'revisions', 'custom-fields'),
+		'supports' => array('title', 'thumbnail', 'revisions', 'custom-fields', 'author'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,
