@@ -7,79 +7,152 @@
 get_header();
 
 // The Query.
-$cat_slider_query = new WP_Query( array(
-    'post_type' => 'category_slider'
-) ); ?>
+$cat_slider_query = new WP_Query( array('post_type' => 'category_slider')); ?>
 
-	<main id="primary" class="site-main container mt-5 mb-5">
+	<main id="primary" class="slider-container container mt-5 mb-5">
 
 	<?php
 
 // The Loop.
 if ( $cat_slider_query->have_posts() ) { ?>
 	
-    <div class="slider-row row">
+    
     <?php 
-    while ( $cat_slider_query->have_posts() ) {
+    while ( $cat_slider_query->have_posts() ) :
 		$cat_slider_query->the_post(); ?>
-      <div class="col-12 col-md-8">
-        <div class="row">
-            <div class="col-6"> <h2><?php esc_html( the_field('slide_heading')); ?></h2> </div>
-            <div class="col-6"><a href="">More</a></div>
-        </div>
-        <?php $slider_box_1 = get_field('slide_box_1');
-            $slider_box_2 = get_field('slide_box_2');
-        ?>
-      <div class="row mt-5 mb-5">
-        <?php 
-            if($slider_box_1){?> 
-            <div class="col-4">
-            <div class="image">
-                <?php $box_1_image = $slider_box_1['icon']['sizes']['thumbnail']; ?>
-                <img src="<?php echo $box_1_image; ?>" alt="Box 1 Image" />
-            </div>
-            <div class="label">
-                <?php $box_1_label = $slider_box_1['label'];?>
-                <span>
-                    <?php echo $box_1_label; ?>
-                </span>
-            </div>
-        </div>
-        <?php } ?>
-
-        <?php 
-            if($slider_box_2){?> 
-            <div class="col-4">
-            <div class="image">
-                <?php $box_1_image = $slider_box_2['icon']['sizes']['thumbnail']; ?>
-                <img src="<?php echo $box_1_image; ?>" alt="Box 1 Image" />
-            </div>
-            <div class="label">
-                <?php $box_1_label = $slider_box_2['label'];?>
-                <span>
-                    <?php echo $box_1_label; ?>
-                </span>
-            </div>
-        </div>
-        <?php } ?>
-       
-        <div class="col-4">3</div>
-      </div>
-      <div class="row mt-5 mb-5">
-        <div class="col-4">4</div>
-        <div class="col-4">5</div>
-        <div class="col-4">6</div>
-      </div>
+      <div class="slider-row row">
         
-    </div>
-    <div class="col-12 col-md-4">
-        <?php the_post_thumbnail( 'full' ); ?>
-    </div>
+        <div class="col-12 col-md-7">
+            <div class="row slide-heading d-flex align-items-center mb-3">
+                <div class="col-md-6">
+                    <?php $heading = get_field('slide_heading'); ?>
+                    <?php if($heading) :?>
+                        <h2 class="slider-heading"><?php echo esc_html( $heading ); ?> </h2>
+                    <?php endif; ?>
+                    
+                </div>
+                <div class="col-md-6">
+                <?php $morelink = get_field('slide_more_link'); ?>
+                    <?php if($morelink) :?>
+                        <a href="<?php echo $morelink ?>">More</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="row box-wrapper">
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                <div class="icon-box">
+                    <?php if ( have_rows( 'slide_box_1' ) ) : ?>
+                        <?php while ( have_rows( 'slide_box_1' ) ) : the_row(); ?>
+                            <?php $icon = get_sub_field( 'icon' ); ?>
+                            <?php if ( $icon ) : ?>
+                                <div class="icon-image">
+                                    <img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+                                </div>
+                            <?php endif; ?>
+                                <div class="icon-label">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                
+                        <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+                
+            </div>
+            
+        </div>
 
-	 <?php }
-    ?>
-  
-    </div>
+        <div class="col-12 col-md-5">
+            <div class="image-wrapper">
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <?php the_post_thumbnail('full'); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+      </div>
+
+	 <?php endwhile; ?>
+    
+
+
 	<?php
 	
 } else {
@@ -94,3 +167,4 @@ wp_reset_postdata();
 <?php
 get_sidebar();
 get_footer();
+

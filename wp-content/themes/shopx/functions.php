@@ -224,7 +224,7 @@ function my_acf_settings_url( $url ) {
 add_filter('acf/settings/show_admin', 'my_acf_show_settins_menu' );
 
 function my_acf_show_settins_menu( $admin_show) {
-	return false;
+	return true;
 }
 
 
