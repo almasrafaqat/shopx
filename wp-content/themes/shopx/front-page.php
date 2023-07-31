@@ -16,7 +16,7 @@ $cat_slider_query = new WP_Query( array('post_type' => 'category_slider')); ?>
 // The Loop.
 if ( $cat_slider_query->have_posts() ) { ?>
 	
-    
+    <div class="owl-carousel">
     <?php 
     while ( $cat_slider_query->have_posts() ) :
 		$cat_slider_query->the_post(); ?>
@@ -151,7 +151,7 @@ if ( $cat_slider_query->have_posts() ) { ?>
 
 	 <?php endwhile; ?>
     
-
+     </div> <!--owl-carousel-->
 
 	<?php
 	
@@ -163,6 +163,18 @@ wp_reset_postdata();
 ?>
 
 	</main><!-- #main -->
+    <script>
+
+jQuery(document).ready(function(){
+  jQuery(".owl-carousel").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    dots: false,
+                    nav: true,
+                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>']
+                });
+});
+    </script>
 
 <?php
 get_sidebar();

@@ -7,9 +7,13 @@ function shopx_scripts() {
   /**Font-awesome css all */
   wp_enqueue_style('font-awesome', get_template_directory_uri() .'/assets/font-awesome/css/all.min.css', array(), '6.4.0');
 
+  /** Owl Carouse CSS */
+  wp_enqueue_style('owl-carousel-css', get_template_directory_uri() .'/assets/owl/assets/owl.carousel.min.css', array(), '2.3.4');
+
   /**Font-awesome css min */
   wp_enqueue_style('font-awesome-v4', get_template_directory_uri() .'/assets/font-awesome/css/v4-shims.min.css', array(), '6.4.0');
 
+  
 
 
 /**Default */
@@ -23,6 +27,9 @@ function shopx_scripts() {
 
   /**Bootstrap js */
   wp_enqueue_script("bootstrap-js", get_template_directory_uri(). '/assets/js/bootstrap.min.js', array('jquery'), '5.3.0', false);
+
+   /**owl Carousel js */
+   wp_enqueue_script("owl-carousel-js", get_template_directory_uri(). '/assets/owl/owl.carousel.min.js', array('jquery'), '2.3.4', false);
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
