@@ -25,36 +25,52 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
+<div class="product-card">
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
+	do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	/**
+	<div class="product-thumbnail">
+		
+		<?php
+			/**
 	 * Hook: woocommerce_before_shop_loop_item_title.
 	 *
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
+	
+	do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
+		
+	</div>
+	<div class="product-info">
+ <?php
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+	do_action( 'woocommerce_shop_loop_item_title' ); 
 
-	/**
+		/**
 	 * Hook: woocommerce_after_shop_loop_item_title.
 	 *
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop_item_title' );
+	
+	
+	?>
+
+	</div> <!--product-info-->
+	<div class="product-cart">
+<?php
+
 
 	/**
 	 * Hook: woocommerce_after_shop_loop_item.
@@ -64,4 +80,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
+	</div> <!--product-cart-->
+	</div> <!--product-card-->
 </li>
+
